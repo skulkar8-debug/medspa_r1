@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STOC Advisory | U.S. Medical Aesthetics Market Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#DDE7F2;
+  --page:#FFFFFF;
+  --card:#EBF2FA;
+  --card2:#F4F8FD;
+  --blue:#1B7EC5;
+  --blue-dim:rgba(27,126,197,0.09);
+  --navy:#2C3370;
+  --navy-dim:rgba(44,51,112,0.07);
+  --dark:#0C1730;
+  --light:#A5BDD6;
+  --white:#FFFFFF;
+  --text:#2A3A55;
+  --muted:#7A90A8;
+  --border:rgba(27,126,197,0.13);
+  --line:rgba(12,23,48,0.08);
+  --green:#1A9A6A;
+  --red:#C84040;
+  --amber:#C87010;
+}
+body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--dark);padding:28px 0 60px;}
+.deck{max-width:1160px;margin:0 auto;display:flex;flex-direction:column;gap:22px;}
+
+.page{background:var(--page);border:1px solid rgba(27,126,197,0.1);padding:38px 56px 44px;position:relative;box-shadow:0 1px 12px rgba(12,23,48,0.07);}
+.page::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--blue);}
+.page.navy-top::before{background:var(--navy);}
+.page.dark-top::before{background:var(--dark);}
+.corner-mark{position:absolute;bottom:18px;right:24px;font-size:10px;font-weight:600;letter-spacing:1.5px;color:rgba(122,144,168,0.4);text-transform:uppercase;}
+
+/* ====== LOGO ====== */
+.logo{display:flex;align-items:center;}
+.logo-div{width:1px;height:32px;background:rgba(44,51,112,0.2);margin:0 11px;}
+.logo-words{display:flex;flex-direction:column;line-height:1;}
+.logo-stoc{font-size:15px;font-weight:800;color:#2C3370;letter-spacing:1.5px;}
+.logo-adv{font-size:8.5px;font-weight:700;color:#1B7EC5;letter-spacing:3px;text-transform:uppercase;margin-top:3px;}
+
+.pg-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.pg-tag{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+
+.hl{font-size:34px;font-weight:800;line-height:1.1;color:var(--dark);margin-bottom:10px;letter-spacing:-0.4px;}
+.hl .b{color:var(--blue);}
+.hl .n{color:var(--navy);}
+.sub{font-size:13.5px;font-weight:400;line-height:1.65;color:var(--text);max-width:850px;margin-bottom:20px;}
+
+.ibar{background:var(--blue-dim);border-left:3px solid var(--blue);padding:12px 18px;margin-top:16px;}
+.ibar .lbl{font-size:10px;font-weight:800;letter-spacing:2px;color:var(--blue);text-transform:uppercase;margin-bottom:3px;}
+.ibar .txt{font-size:13px;font-weight:500;color:var(--dark);line-height:1.5;}
+.pbar{background:var(--navy-dim);border-left:3px solid var(--navy);padding:12px 18px;margin-top:10px;}
+.pbar .lbl{font-size:10px;font-weight:800;letter-spacing:2px;color:var(--navy);text-transform:uppercase;margin-bottom:3px;}
+.pbar .txt{font-size:13px;font-weight:500;color:var(--text);line-height:1.5;}
+
+.stat-row{display:flex;gap:12px;margin-top:20px;}
+.sbox{background:var(--card);border:1px solid var(--border);padding:20px 22px;flex:1;}
+.sbox.blue-bg{background:var(--blue);border-color:var(--blue);}
+.sbox.navy-bg{background:var(--navy);border-color:var(--navy);}
+.sbox.dark-bg{background:var(--dark);border-color:var(--dark);}
+.sbox .num{font-size:44px;font-weight:800;line-height:1;color:var(--blue);margin-bottom:6px;letter-spacing:-1.5px;}
+.sbox.blue-bg .num,.sbox.navy-bg .num,.sbox.dark-bg .num{color:var(--white);}
+.sbox .lbl{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;}
+.sbox.blue-bg .lbl,.sbox.navy-bg .lbl,.sbox.dark-bg .lbl{color:rgba(255,255,255,0.62);}
+
+.mkt-banner{background:var(--dark);padding:18px 24px;margin-top:18px;display:flex;align-items:center;gap:20px;}
+.mkt-num{font-size:38px;font-weight:800;color:var(--white);letter-spacing:-1px;white-space:nowrap;}
+.mkt-lbl{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:4px;}
+.mkt-txt{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5;}
+.mkt-src{font-size:10px;color:rgba(165,189,214,0.5);letter-spacing:1px;text-transform:uppercase;margin-top:5px;}
+.mkt-div{width:1px;height:50px;background:rgba(165,189,214,0.2);flex-shrink:0;}
+
+.col2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.col3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px;}
+.col4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;}
+.col6040{display:grid;grid-template-columns:3fr 2fr;gap:20px;margin-top:16px;}
+
+.ccrd{background:var(--card2);border:1px solid var(--border);border-top:2px solid;padding:14px 16px;}
+.ccrd .rname{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.ccrd .det{font-size:12px;color:var(--text);line-height:1.55;}
+
+.cbox{background:var(--card2);border:1px solid rgba(27,126,197,0.1);padding:16px;position:relative;margin-top:16px;}
+
+.spanel{display:flex;flex-direction:column;gap:10px;}
+.spitem{background:var(--card2);border:1px solid var(--border);border-left:3px solid var(--blue);padding:12px 16px;}
+.spitem .num{font-size:28px;font-weight:800;color:var(--blue);line-height:1;letter-spacing:-0.5px;}
+.spitem .lbl{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;margin-top:3px;}
+
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;}
+.qcard{background:var(--card2);border:1px solid var(--border);padding:10px 14px;display:flex;gap:10px;align-items:flex-start;}
+.qdot{width:10px;height:10px;border-radius:50%;margin-top:4px;flex-shrink:0;}
+.qname{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px;}
+.qdesc{font-size:11.5px;color:var(--muted);line-height:1.4;}
+
+.dtbl{width:100%;border-collapse:collapse;margin-top:14px;}
+.dtbl th{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:9px 10px;border-bottom:2px solid var(--border);text-align:left;background:var(--card);}
+.dtbl td{font-size:12.5px;padding:8px 10px;border-bottom:1px solid rgba(27,126,197,0.07);color:var(--text);}
+.dtbl tr:nth-child(even) td{background:rgba(165,189,214,0.07);}
+.tag{display:inline-block;padding:2px 7px;font-size:10px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;}
+.tag-g{background:rgba(26,154,106,0.1);color:#0A7A50;}
+.tag-b{background:rgba(27,126,197,0.1);color:#1060A0;}
+.tag-y{background:rgba(200,112,16,0.1);color:#905800;}
+
+.ctbl{width:100%;border-collapse:collapse;margin-top:16px;}
+.ctbl th{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:14px 20px;text-align:left;}
+.ctbl th:first-child{background:var(--card);color:var(--muted);border-right:1px solid var(--border);}
+.ctbl th:last-child{background:var(--blue);color:var(--white);}
+.ctbl td{font-size:13px;padding:10px 20px;border-bottom:1px solid var(--line);}
+.ctbl td:first-child{background:rgba(165,189,214,0.07);color:var(--muted);border-right:1px solid var(--border);}
+.ctbl td:last-child{background:rgba(27,126,197,0.04);color:var(--dark);font-weight:600;}
+
+.final-cta{margin-top:16px;background:var(--navy);padding:18px 24px;font-size:15px;font-weight:800;color:var(--white);letter-spacing:0.2px;}
+
+/* METHODOLOGY */
+.acc-block{display:flex;align-items:flex-start;gap:22px;background:var(--blue);padding:22px 26px;}
+.acc-pct{font-size:80px;font-weight:800;color:var(--white);line-height:1;letter-spacing:-3px;flex-shrink:0;}
+.acc-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.acc-text{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;}
+.acc-sub{display:inline-flex;align-items:center;background:rgba(255,255,255,0.15);padding:4px 12px;margin-top:10px;font-size:10.5px;font-weight:700;color:var(--white);letter-spacing:1px;text-transform:uppercase;}
+.src-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+.src-card{background:var(--card2);border:1px solid var(--border);border-left:3px solid;padding:14px 16px;}
+.src-card .sc-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+.src-card .sc-text{font-size:12px;color:var(--text);line-height:1.55;}
+.class-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.class-item{background:var(--card);border:1px solid var(--border);padding:14px 16px;text-align:center;}
+.class-item .ci-label{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.class-item .ci-name{font-size:15px;font-weight:800;}
+.class-item .ci-desc{font-size:11px;color:var(--muted);line-height:1.4;margin-top:5px;}
+
+/* REGIONAL BREAKDOWN */
+.reg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;}
+.reg-card{border:1px solid;border-top:3px solid;padding:16px;background:var(--card2);}
+.reg-card .rg-title{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.06);}
+.reg-card .rg-stat{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;}
+.reg-card .rg-val{font-size:18px;font-weight:800;letter-spacing:-0.5px;line-height:1;}
+.reg-card .rg-key{font-size:10px;font-weight:600;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase;}
+.reg-card .rg-sub{font-size:10.5px;color:var(--muted);margin-top:3px;}
+.reg-card .rg-top{font-size:11px;font-weight:700;margin-top:10px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);}
+
+.reg-tbl{width:100%;border-collapse:collapse;margin-top:14px;font-size:12px;}
+.reg-tbl th{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:8px 10px;border-bottom:2px solid var(--border);text-align:left;background:var(--card);}
+.reg-tbl td{padding:8px 10px;border-bottom:1px solid rgba(27,126,197,0.07);color:var(--text);}
+.reg-tbl tr:nth-child(even) td{background:rgba(165,189,214,0.06);}
+.pip-bar{height:5px;border-radius:2px;margin-top:4px;}
+
+.sec-rule{display:flex;align-items:center;gap:12px;margin:20px 0 0;}
+.sec-rule .sr-label{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+.sec-rule .sr-line{flex:1;height:1px;background:var(--line);}
+
+@media print{body{padding:0;background:#fff;}.page{box-shadow:none;break-inside:avoid;break-after:page;}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- ============================================================ PAGE 01: COVER -->
+<div class="page" id="p1">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">01 / 12 &nbsp; Thesis</div>
+  </div>
+  <div class="hl" style="font-size:42px;max-width:800px;line-height:1.06;">U.S. Medical Aesthetics <span class="b">Remains Structurally Underpenetrated.</span> Opportunity Is Uneven and Time-Sensitive.</div>
+  <div class="mkt-banner" style="margin-top:16px;">
+    <div>
+      <div class="mkt-lbl">Market Size Projection</div>
+      <div class="mkt-num">$44.83B</div>
+      <div class="mkt-src">Projected by 2032 &nbsp;|&nbsp; Fortune Business Insights via Yahoo Finance</div>
+    </div>
+    <div class="mkt-div"></div>
+    <div class="mkt-txt">The Medical Spa market is on a sustained growth trajectory driven by rising consumer demand for non-surgical aesthetic treatments, physician-supervised service expansion, and demographic tailwinds across the 35 to 65 age cohort. This growth dynamic compounds the urgency of early platform consolidation before valuation multiples reset upward.</div>
+  </div>
+  <div class="sub" style="margin-top:16px;">A CBSA-level analysis of 24,853 clinics reveals fragmented supply, low PE penetration, and geographically concentrated whitespace across 686 markets. Scale exists. Efficiency does not. The distinction determines how capital must be deployed.</div>
+  <div class="stat-row">
+    <div class="sbox blue-bg"><div class="num">97%</div><div class="lbl">Independent Ownership</div></div>
+    <div class="sbox navy-bg"><div class="num">&lt;5%</div><div class="lbl">PE Penetration Rate</div></div>
+    <div class="sbox dark-bg"><div class="num">0</div><div class="lbl">Scaled National Platforms</div></div>
+    <div class="sbox"><div class="num">686</div><div class="lbl">CBSAs Fully Mapped</div></div>
+  </div>
+  <div class="ibar" style="margin-top:16px;">
+    <div class="lbl">Core Thesis</div>
+    <div class="txt">This is a fragmented market with structural inefficiency, not just a large market. Fragmentation at this scale combined with sub-5% PE penetration and zero national platforms creates a defined and measurable window for scaled entry before the cycle closes.</div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 02: METHODOLOGY -->
+<div class="page navy-top" id="p2">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">02 / 12 &nbsp; Intelligence Architecture</div>
+  </div>
+  <div class="hl">Target Profiles Built from <span class="b">Structured Multi-Source Extraction</span></div>
+  <div class="sub">Every target in the dataset is classified, scored, and validated through a systematic extraction pipeline spanning four primary data sources. This is not survey data or manual research. It is structured extraction at scale, validated against a ground-truth sample.</div>
+  <div class="acc-block">
+    <div class="acc-pct">93%</div>
+    <div style="flex:1;">
+      <div class="acc-title">Classification Accuracy Against Validated Ground Truth</div>
+      <div class="acc-text">Ownership classification (independent vs. chain vs. PE-backed) validated against a 500-target sample with confirmed ownership records. Accuracy determined by ownership signal analysis: corporate entity linkage, multi-location URL pattern detection, and NPI database cross-referencing.</div>
+      <div class="acc-sub">Validated on 500-target sample &nbsp;|&nbsp; Structured Extraction Pipeline</div>
+    </div>
+  </div>
+  <div class="src-grid">
+    <div class="src-card" style="border-left-color:var(--blue);">
+      <div class="sc-title" style="color:var(--blue);">Target Websites</div>
+      <div class="sc-text">Structured extraction of service menus, pricing signals, booking systems, membership programs, staff credentials, and branding quality. Architecture and conversion signals scored via automated scraping pipeline.</div>
+    </div>
+    <div class="src-card" style="border-left-color:var(--navy);">
+      <div class="sc-title" style="color:var(--navy);">Google Business Listings</div>
+      <div class="sc-text">Review count, average rating, recency distribution, response rate, Q&amp;A volume, and photo quality extracted across all mapped targets. Used for reputation and demand signal scoring.</div>
+    </div>
+    <div class="src-card" style="border-left-color:var(--light);">
+      <div class="sc-title" style="color:var(--dark);">Yelp / Healthgrades Reviews</div>
+      <div class="sc-text">Cross-platform review sentiment analysis, category coverage, and rating consistency. Healthgrades applied specifically to medically licensed practice identification and provider credential verification.</div>
+    </div>
+    <div class="src-card" style="border-left-color:var(--green);">
+      <div class="sc-title" style="color:var(--green);">Instagram / Facebook Accounts</div>
+      <div class="sc-text">Follower count, posting frequency, engagement rate, content quality, and reel usage patterns. Social presence indexed as a leading indicator of patient acquisition investment and brand maturity.</div>
+    </div>
+  </div>
+  <div class="class-row">
+    <div class="class-item">
+      <div class="ci-label">Classification Type 1</div>
+      <div class="ci-name" style="color:var(--green);">Independent</div>
+      <div class="ci-desc">Single-target, single-location. No PE linkage. No multi-location URL fingerprint. NPI cross-reference confirms individual or small group ownership.</div>
+    </div>
+    <div class="class-item">
+      <div class="ci-label">Classification Type 2</div>
+      <div class="ci-name" style="color:var(--amber);">Chain</div>
+      <div class="ci-desc">Multi-location target with consistent branding and shared corporate entity. Not PE-backed. Identified via URL patterns, entity linkage, and franchise indicators.</div>
+    </div>
+    <div class="class-item">
+      <div class="ci-label">Classification Type 3</div>
+      <div class="ci-name" style="color:var(--red);">PE-Backed</div>
+      <div class="ci-desc">Confirmed private equity ownership via entity linkage to known PE platforms, fund disclosures, press releases, and EDGAR records where applicable.</div>
+    </div>
+  </div>
+  <div class="ibar">
+    <div class="lbl">Why This Matters</div>
+    <div class="txt">Classification accuracy determines the reliability of every downstream metric: PE penetration rates, target density counts, supply gap calculations, and STOC scoring. A 93% validated accuracy rate against a 500-target sample sets an institutional-grade reliability standard for the entire intelligence layer.</div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 03: COVERAGE + REGIONAL BREAKDOWN -->
+<div class="page" id="p3">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">03 / 12 &nbsp; Coverage + Regional Intelligence</div>
+  </div>
+  <div class="hl">Full Market Visibility Enables <span class="b">Sub-Market Level Decisioning</span></div>
+  <div class="sub">686 CBSAs. 24,853 clinics. 20+ target signals per location. Every independent target is scored, ranked, and mapped against supply density and competitive context at the CBSA level. Regional variance is the defining variable in deployment sequencing.</div>
+
+  <!-- MAP + NATIONAL STATS -->
+  <div class="col6040">
+    <div style="background:var(--card);border:1px solid rgba(27,126,197,0.1);padding:12px;">
+      <div id="usmap" style="width:100%;height:300px;"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;padding:8px 2px 0;">
+        <div style="display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;"><span style="width:8px;height:8px;border-radius:50%;background:#1B7EC5;display:inline-block;"></span>Northeast</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;"><span style="width:8px;height:8px;border-radius:50%;background:#1A9A6A;display:inline-block;"></span>South</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;"><span style="width:8px;height:8px;border-radius:50%;background:#2C3370;display:inline-block;"></span>Midwest</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;"><span style="width:8px;height:8px;border-radius:50%;background:#A5BDD6;display:inline-block;border:1px solid #7A90A8;"></span>West</div>
+      </div>
+    </div>
+    <div class="spanel">
+      <div class="spitem"><div class="num">24,853</div><div class="lbl">Total Targets Mapped</div></div>
+      <div class="spitem"><div class="num">686</div><div class="lbl">CBSAs Covered</div></div>
+      <div class="spitem"><div class="num">20+</div><div class="lbl">Signals Per Target</div></div>
+      <div class="spitem" style="border-left-color:var(--navy);"><div class="num" style="color:var(--navy);">Z1-Z4</div><div class="lbl">Proximity Zones Applied</div></div>
+      <div style="background:var(--card);border:1px solid var(--border);padding:12px 14px;">
+        <div style="font-size:10px;font-weight:800;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;padding-bottom:7px;border-bottom:1px solid var(--line);">Signal Stack Per Target</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
+          <div style="font-size:11px;color:var(--text);">Reviews / Rating</div><div style="font-size:11px;color:var(--text);">IG Presence</div>
+          <div style="font-size:11px;color:var(--text);">Website Score</div><div style="font-size:11px;color:var(--text);">Online Booking</div>
+          <div style="font-size:11px;color:var(--text);">Membership</div><div style="font-size:11px;color:var(--text);">PE Proximity</div>
+          <div style="font-size:11px;color:var(--text);">Supply Density</div><div style="font-size:11px;color:var(--text);">STOC Score</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION DIVIDER -->
+  <div class="sec-rule"><div class="sr-label">Regional Intelligence Breakdown</div><div class="sr-line"></div></div>
+
+  <!-- 4 REGION CARDS -->
+  <div class="reg-grid">
+    <!-- SOUTH -->
+    <div class="reg-card" style="border-color:rgba(26,154,106,0.2);border-top-color:#1A9A6A;">
+      <div class="rg-title" style="color:#1A9A6A;">South</div>
+      <div class="rg-stat"><span class="rg-key">CBSAs</span><span class="rg-val" style="color:var(--dark);">218</span></div>
+      <div class="rg-stat"><span class="rg-key">Targets</span><span class="rg-val" style="color:#1A9A6A;">9,240</span></div>
+      <div class="rg-stat"><span class="rg-key">Share</span><span class="rg-val" style="color:var(--dark);font-size:14px;">37%</span></div>
+      <div class="pip-bar" style="background:rgba(26,154,106,0.15);"><div style="width:37%;height:100%;background:#1A9A6A;border-radius:2px;"></div></div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;">
+        <div><div class="rg-key">Avg STOC</div><div style="font-size:16px;font-weight:800;color:#1A9A6A;letter-spacing:-0.3px;">74.8</div></div>
+        <div><div class="rg-key">PE Rate</div><div style="font-size:16px;font-weight:800;color:var(--dark);letter-spacing:-0.3px;">3.2%</div></div>
+        <div><div class="rg-key">Avg Gap</div><div style="font-size:16px;font-weight:800;color:var(--blue);letter-spacing:-0.3px;">+29%</div></div>
+      </div>
+      <div class="rg-top" style="color:var(--dark);">Top CBSA: <span style="font-weight:800;color:#1A9A6A;">Charlotte-Concord, NC</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:5px;">Priority markets: 42 &nbsp;|&nbsp; Zero-PE CBSAs: 168</div>
+      <div style="font-size:11px;color:var(--text);margin-top:7px;line-height:1.5;">Highest net opportunity region. STOC composite leads all four regions. South dominates both target count and supply gap, with minimal PE-driven pricing pressure in most markets.</div>
+    </div>
+    <!-- MIDWEST -->
+    <div class="reg-card" style="border-color:rgba(44,51,112,0.2);border-top-color:#2C3370;">
+      <div class="rg-title" style="color:#2C3370;">Midwest</div>
+      <div class="rg-stat"><span class="rg-key">CBSAs</span><span class="rg-val" style="color:var(--dark);">186</span></div>
+      <div class="rg-stat"><span class="rg-key">Targets</span><span class="rg-val" style="color:#2C3370;">6,420</span></div>
+      <div class="rg-stat"><span class="rg-key">Share</span><span class="rg-val" style="color:var(--dark);font-size:14px;">26%</span></div>
+      <div class="pip-bar" style="background:rgba(44,51,112,0.12);"><div style="width:26%;height:100%;background:#2C3370;border-radius:2px;"></div></div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;">
+        <div><div class="rg-key">Avg STOC</div><div style="font-size:16px;font-weight:800;color:#2C3370;letter-spacing:-0.3px;">71.3</div></div>
+        <div><div class="rg-key">PE Rate</div><div style="font-size:16px;font-weight:800;color:var(--dark);letter-spacing:-0.3px;">2.8%</div></div>
+        <div><div class="rg-key">Avg Gap</div><div style="font-size:16px;font-weight:800;color:var(--blue);letter-spacing:-0.3px;">+26%</div></div>
+      </div>
+      <div class="rg-top" style="color:var(--dark);">Top CBSA: <span style="font-weight:800;color:#2C3370;">Columbus, OH</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:5px;">Priority markets: 34 &nbsp;|&nbsp; Zero-PE CBSAs: 148</div>
+      <div style="font-size:11px;color:var(--text);margin-top:7px;line-height:1.5;">Most architecturally consistent region. Mid-density typology dominates. Reliable rollup conditions with low PE entry risk. Scalable across multiple simultaneous CBSAs without pricing interference.</div>
+    </div>
+    <!-- WEST -->
+    <div class="reg-card" style="border-color:rgba(165,189,214,0.4);border-top-color:#A5BDD6;">
+      <div class="rg-title" style="color:#5A7A9A;">West</div>
+      <div class="rg-stat"><span class="rg-key">CBSAs</span><span class="rg-val" style="color:var(--dark);">156</span></div>
+      <div class="rg-stat"><span class="rg-key">Targets</span><span class="rg-val" style="color:#5A7A9A;">5,840</span></div>
+      <div class="rg-stat"><span class="rg-key">Share</span><span class="rg-val" style="color:var(--dark);font-size:14px;">23%</span></div>
+      <div class="pip-bar" style="background:rgba(165,189,214,0.15);"><div style="width:23%;height:100%;background:#A5BDD6;border-radius:2px;"></div></div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;">
+        <div><div class="rg-key">Avg STOC</div><div style="font-size:16px;font-weight:800;color:#5A7A9A;letter-spacing:-0.3px;">65.2</div></div>
+        <div><div class="rg-key">PE Rate</div><div style="font-size:16px;font-weight:800;color:var(--amber);letter-spacing:-0.3px;">4.6%</div></div>
+        <div><div class="rg-key">Avg Gap</div><div style="font-size:16px;font-weight:800;color:var(--blue);letter-spacing:-0.3px;">+18%</div></div>
+      </div>
+      <div class="rg-top" style="color:var(--dark);">Top CBSA: <span style="font-weight:800;color:#5A7A9A;">Denver-Aurora, CO</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:5px;">Priority markets: 22 &nbsp;|&nbsp; Zero-PE CBSAs: 108</div>
+      <div style="font-size:11px;color:var(--text);margin-top:7px;line-height:1.5;">Wide dispersion across STOC and supply gap metrics. Elevated PE presence in coastal metros compresses opportunity. Selective entry required. CBSA-level filtering mandatory before capital is committed.</div>
+    </div>
+    <!-- NORTHEAST -->
+    <div class="reg-card" style="border-color:rgba(27,126,197,0.2);border-top-color:#1B7EC5;">
+      <div class="rg-title" style="color:#1B7EC5;">Northeast</div>
+      <div class="rg-stat"><span class="rg-key">CBSAs</span><span class="rg-val" style="color:var(--dark);">126</span></div>
+      <div class="rg-stat"><span class="rg-key">Targets</span><span class="rg-val" style="color:#1B7EC5;">3,353</span></div>
+      <div class="rg-stat"><span class="rg-key">Share</span><span class="rg-val" style="color:var(--dark);font-size:14px;">13%</span></div>
+      <div class="pip-bar" style="background:rgba(27,126,197,0.12);"><div style="width:13%;height:100%;background:#1B7EC5;border-radius:2px;"></div></div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;">
+        <div><div class="rg-key">Avg STOC</div><div style="font-size:16px;font-weight:800;color:#1B7EC5;letter-spacing:-0.3px;">58.4</div></div>
+        <div><div class="rg-key">PE Rate</div><div style="font-size:16px;font-weight:800;color:var(--red);letter-spacing:-0.3px;">6.8%</div></div>
+        <div><div class="rg-key">Avg Gap</div><div style="font-size:16px;font-weight:800;color:var(--muted);letter-spacing:-0.3px;">+12%</div></div>
+      </div>
+      <div class="rg-top" style="color:var(--dark);">Top CBSA: <span style="font-weight:800;color:#1B7EC5;">Philadelphia, PA</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:5px;">Priority markets: 11 &nbsp;|&nbsp; Zero-PE CBSAs: 74</div>
+      <div style="font-size:11px;color:var(--text);margin-top:7px;line-height:1.5;">Highest PE penetration of any region. Supply density already elevated in most major metros. Late-entry dynamics predominate. Narrow windows remain in select suburban markets outside gateway cities.</div>
+    </div>
+  </div>
+
+  <!-- REGIONAL METRICS TABLE -->
+  <div class="sec-rule" style="margin-top:18px;"><div class="sr-label">Detailed Regional Metrics</div><div class="sr-line"></div></div>
+  <table class="reg-tbl">
+    <thead>
+      <tr>
+        <th>Region</th><th>CBSAs</th><th>Targets</th><th>% Total</th>
+        <th>Avg STOC</th><th>PE Rate</th><th>Avg Gap</th><th>Target Density</th>
+        <th>Priority CBSAs</th><th>0% PE CBSAs</th><th>Active Consol.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:800;color:#1A9A6A;">South</td>
+        <td>218</td><td style="font-weight:700;">9,240</td><td>37%</td>
+        <td style="font-weight:800;color:#1A9A6A;">74.8</td>
+        <td>3.2%</td>
+        <td style="color:var(--blue);font-weight:700;">+29%</td>
+        <td>42.4 / CBSA</td>
+        <td style="font-weight:700;color:var(--dark);">42</td>
+        <td>168</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800;color:#2C3370;">Midwest</td>
+        <td>186</td><td style="font-weight:700;">6,420</td><td>26%</td>
+        <td style="font-weight:800;color:#2C3370;">71.3</td>
+        <td>2.8%</td>
+        <td style="color:var(--blue);font-weight:700;">+26%</td>
+        <td>34.5 / CBSA</td>
+        <td style="font-weight:700;color:var(--dark);">34</td>
+        <td>148</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800;color:#5A7A9A;">West</td>
+        <td>156</td><td style="font-weight:700;">5,840</td><td>23%</td>
+        <td style="font-weight:800;color:#1B7EC5;">65.2</td>
+        <td style="color:var(--amber);">4.6%</td>
+        <td style="color:var(--muted);font-weight:700;">+18%</td>
+        <td>37.4 / CBSA</td>
+        <td style="font-weight:700;color:var(--dark);">22</td>
+        <td>108</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800;color:#1B7EC5;">Northeast</td>
+        <td>126</td><td style="font-weight:700;">3,353</td><td>13%</td>
+        <td style="font-weight:800;color:#1B7EC5;">58.4</td>
+        <td style="color:var(--red);font-weight:700;">6.8%</td>
+        <td style="color:var(--muted);font-weight:700;">+12%</td>
+        <td>26.6 / CBSA</td>
+        <td style="font-weight:700;color:var(--dark);">11</td>
+        <td>74</td>
+        <td>22</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- REGIONAL INSIGHT BARS -->
+  <div class="col2" style="gap:12px;">
+    <div class="ibar" style="margin-top:14px;">
+      <div class="lbl">South + Midwest Priority</div>
+      <div class="txt">South and Midwest together represent 63% of all mapped targets, 76 of the 109 priority CBSAs, and the two lowest PE penetration rates nationally. Sequential deployment across these two regions provides the most capital-efficient path to scale with minimal competitive pricing interference.</div>
+    </div>
+    <div class="pbar" style="margin-top:14px;padding:12px 18px;">
+      <div class="lbl">Northeast + West Caution</div>
+      <div class="txt">Northeast carries the highest PE rate (6.8%) and lowest avg gap (+12%) of any region. Opportunity compression is already measurable. West requires CBSA-level filtering due to wide intra-region variance. Both require scored entry rather than geography-first allocation.</div>
+    </div>
+  </div>
+
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 04: REGIONAL IMBALANCE -->
+<div class="page" id="p4">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">04 / 12 &nbsp; Regional Analysis</div>
+  </div>
+  <div class="hl">Target Scale Does Not Translate <span class="b">to Market Efficiency</span></div>
+  <div class="sub">Plotting supply density against STOC scores by region reveals that high-density markets are frequently over-served while lower-density markets carry suppressed but recoverable demand. The opportunity signal is inversely related to headline market size.</div>
+  <div class="cbox"><div style="position:relative;width:100%;height:260px;"><canvas id="scatterChart"></canvas></div></div>
+  <div class="col4">
+    <div class="ccrd" style="border-top-color:#1A9A6A;"><div class="rname" style="color:#1A9A6A;">South</div><div class="det">High STOC + lower BD density. Latent demand outpaces current supply. Strongest net opportunity region for both acquisition and de novo entry.</div></div>
+    <div class="ccrd" style="border-top-color:#1B7EC5;"><div class="rname" style="color:#1B7EC5;">Northeast</div><div class="det">High supply density + lower relative STOC. Saturation compresses net opportunity. Late-entry dynamics predominate in most top metros.</div></div>
+    <div class="ccrd" style="border-top-color:#2C3370;"><div class="rname" style="color:#2C3370;">Midwest</div><div class="det">Balanced positioning across both axes. Consistent, scalable market architecture. Most reliable mid-density rollup conditions nationally.</div></div>
+    <div class="ccrd" style="border-top-color:#A5BDD6;"><div class="rname" style="color:#5A7A9A;">West</div><div class="det">Wide dispersion across both metrics. Inconsistent opportunity. Requires CBSA-level filtering before capital is committed.</div></div>
+  </div>
+  <div class="ibar">
+    <div class="lbl">Analytical Finding</div>
+    <div class="txt">Opportunity is driven by supply-demand imbalance, not absolute scale. High total target count does not imply high-quality entry conditions. Geography is a proxy, not a strategy. The STOC score normalizes for this bias.</div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 05: MARKET TYPOLOGY -->
+<div class="page" id="p5">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">05 / 12 &nbsp; Market Typology</div>
+  </div>
+  <div class="hl">Mid-Density Markets Offer the Highest <span class="b">Risk-Adjusted Opportunity</span></div>
+  <div class="sub">Segmenting markets by target density type reveals that dense urban environments face significant supply pressure, while mid-density growth corridors carry the highest composite STOC score with minimal PE competition. Whitespace is not rural.</div>
+  <div class="cbox"><div style="position:relative;width:100%;height:270px;"><canvas id="barTypChart"></canvas></div></div>
+  <div class="col4">
+    <div class="ccrd" style="border-top-color:var(--red);"><div class="rname" style="color:var(--red);">Dense Urban</div><div class="det">High supply saturation. Low gap. Elevated PE presence. Entry window narrowing materially in most top-10 metros nationally.</div></div>
+    <div class="ccrd" style="border-top-color:var(--blue);"><div class="rname" style="color:var(--blue);">Mid-Density</div><div class="det">Highest STOC composite. High supply gap. Minimal PE competition. Priority tier for acquisition and de novo deployment.</div></div>
+    <div class="ccrd" style="border-top-color:var(--navy);"><div class="rname" style="color:var(--navy);">Suburban Growth</div><div class="det">Low supply, variable gap. Demand emerging. De novo-ready in select markets with strong demographic and income tailwinds.</div></div>
+    <div class="ccrd" style="border-top-color:var(--light);"><div class="rname" style="color:var(--muted);">Rural / Exurban</div><div class="det">Low supply, low STOC. Demand insufficient at current growth rates. Selective entry only on a case-by-case basis.</div></div>
+  </div>
+  <div class="ibar">
+    <div class="lbl">Segmentation Finding</div>
+    <div class="txt">Whitespace is concentrated in mid-density growth markets with limited scaled competition and recoverable demand curves. This segmentation removes geography-first bias and replaces it with structure-first decisioning logic.</div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 06: TARGET DISTRIBUTION -->
+<div class="page" id="p6">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">06 / 12 &nbsp; Target Distribution</div>
+  </div>
+  <div class="hl">Independent Targets Cluster <span class="b">Outside Major Metro Markets</span></div>
+  <div class="sub">Acquisition-ready independent targets do not concentrate in top-10 metros. The highest target density by CBSA skews toward mid-size, high-growth markets where consolidation has not yet begun and independent owners have not yet faced PE-driven competitive pricing pressure.</div>
+  <div class="cbox"><div style="position:relative;width:100%;height:280px;"><canvas id="barTargetChart"></canvas></div></div>
+  <div class="col2" style="gap:12px;">
+    <div class="ibar" style="margin-top:0;">
+      <div class="lbl">Structural Observation</div>
+      <div class="txt">Acquisition opportunity is driven by independent target density, not total market size. Top supply cities are not top acquisition cities. Capital allocated purely to gateway metros undershoots total addressable opportunity by a material margin.</div>
+    </div>
+    <div class="pbar" style="margin-top:0;padding:12px 18px;">
+      <div class="lbl">Deployment Implication</div>
+      <div class="txt">The highest-density independent targets are in Tier 2 and Tier 3 CBSAs. These markets are also the least competitively pressured, offering the best combination of target volume and pricing leverage on acquisition multiples.</div>
+    </div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 07: DE NOVO VS ACQUISITION -->
+<div class="page" id="p7">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">07 / 12 &nbsp; Strategic Pathways</div>
+  </div>
+  <div class="hl">Markets Split Into Two <span class="b">Distinct Strategic Pathways</span></div>
+  <div class="sub">Plotting acquisition target density against supply gap separates markets into four structurally distinct categories. De novo and acquisition strategies rarely overlap. Capital deployment must be differentiated by market type, not proximity to existing assets or investor preference.</div>
+  <div class="cbox"><div style="position:relative;width:100%;height:280px;"><canvas id="quadrantChart"></canvas></div></div>
+  <div class="qgrid">
+    <div class="qcard"><div class="qdot" style="background:var(--amber);"></div><div><div class="qname" style="color:var(--amber);">True Whitespace</div><div class="qdesc">High supply gap, low target count. De novo anchor strategy. Build from scratch in structurally underserved markets.</div></div></div>
+    <div class="qcard"><div class="qdot" style="background:var(--green);"></div><div><div class="qname" style="color:var(--green);">Platform Build Markets</div><div class="qdesc">High gap, high targets. Roll-up combined with de novo. Core platform construction with full strategic optionality.</div></div></div>
+    <div class="qcard"><div class="qdot" style="background:var(--blue);"></div><div><div class="qname" style="color:var(--blue);">Roll-Up Only</div><div class="qdesc">Low gap, high targets. Consolidation play only. De novo not justified by supply conditions in these markets.</div></div></div>
+    <div class="qcard"><div class="qdot" style="background:var(--red);"></div><div><div class="qname" style="color:var(--red);">Avoid</div><div class="qdesc">Low gap, few targets. Neither strategy has structural support. Capital reallocation required immediately.</div></div></div>
+  </div>
+  <div class="ibar" style="margin-top:12px;">
+    <div class="lbl">Core CDS Differentiation</div>
+    <div class="txt">This quadrant framework is the operational core of the CDS deployment model. Market entry type is determined by scored data, not preference. The quadrant a CBSA occupies is dynamic and updated as PE activity and supply conditions shift.</div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 08: TOP MARKETS -->
+<div class="page" id="p8">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">08 / 12 &nbsp; Top Markets</div>
+  </div>
+  <div class="hl">High-Opportunity Markets Share <span class="b">Repeatable Structural Patterns</span></div>
+  <div class="sub">Top-ranked CBSAs are not random outliers. Each follows an identifiable configuration of STOC score, supply gap, and competitive pressure. The pattern is screenable, replicable, and extensible across all 686 mapped CBSAs.</div>
+  <table class="dtbl">
+    <thead><tr><th>#</th><th>CBSA / Market</th><th>Region</th><th>Type</th><th>STOC Score</th><th>Supply Gap</th><th>Targets</th><th>PE Count</th><th>Label</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--muted);">01</td><td style="color:var(--dark);font-weight:700;">Charlotte-Concord, NC</td><td>South</td><td>Mid-Density</td><td style="color:var(--blue);font-weight:800;font-size:14px;">87</td><td style="color:var(--green);font-weight:600;">+38%</td><td>142</td><td>1</td><td><span class="tag tag-g">Platform Build</span></td></tr>
+      <tr><td style="color:var(--muted);">02</td><td style="color:var(--dark);font-weight:700;">Nashville, TN</td><td>South</td><td>Mid-Density</td><td style="color:var(--blue);font-weight:800;font-size:14px;">84</td><td style="color:var(--green);font-weight:600;">+35%</td><td>128</td><td>2</td><td><span class="tag tag-g">Platform Build</span></td></tr>
+      <tr><td style="color:var(--muted);">03</td><td style="color:var(--dark);font-weight:700;">Columbus, OH</td><td>Midwest</td><td>Mid-Density</td><td style="color:var(--blue);font-weight:800;font-size:14px;">82</td><td style="color:var(--green);font-weight:600;">+31%</td><td>115</td><td>1</td><td><span class="tag tag-y">De Novo Anchor</span></td></tr>
+      <tr><td style="color:var(--muted);">04</td><td style="color:var(--dark);font-weight:700;">Raleigh-Cary, NC</td><td>South</td><td>Suburban</td><td style="color:var(--blue);font-weight:800;font-size:14px;">81</td><td style="color:var(--green);font-weight:600;">+40%</td><td>98</td><td>0</td><td><span class="tag tag-y">De Novo Anchor</span></td></tr>
+      <tr><td style="color:var(--muted);">05</td><td style="color:var(--dark);font-weight:700;">Austin-Round Rock, TX</td><td>South</td><td>Mid-Density</td><td style="color:var(--blue);font-weight:800;font-size:14px;">80</td><td style="color:var(--green);font-weight:600;">+29%</td><td>156</td><td>3</td><td><span class="tag tag-g">Platform Build</span></td></tr>
+      <tr><td style="color:var(--muted);">06</td><td style="color:var(--dark);font-weight:700;">Indianapolis, IN</td><td>Midwest</td><td>Mid-Density</td><td style="color:var(--blue);font-weight:800;font-size:14px;">79</td><td style="color:var(--green);font-weight:600;">+34%</td><td>88</td><td>1</td><td><span class="tag tag-b">Early Consolidation</span></td></tr>
+      <tr><td style="color:var(--muted);">07</td><td style="color:var(--dark);font-weight:700;">Kansas City, MO-KS</td><td>Midwest</td><td>Mid-Density</td><td style="color:var(--blue);font-weight:800;font-size:14px;">77</td><td style="color:var(--green);font-weight:600;">+28%</td><td>82</td><td>0</td><td><span class="tag tag-b">Early Consolidation</span></td></tr>
+      <tr><td style="color:var(--muted);">08</td><td style="color:var(--dark);font-weight:700;">Denver-Aurora, CO</td><td>West</td><td>Mid-Density</td><td style="color:var(--blue);font-weight:800;font-size:14px;">75</td><td style="color:var(--green);font-weight:600;">+22%</td><td>134</td><td>2</td><td><span class="tag tag-b">Roll-Up Only</span></td></tr>
+      <tr><td style="color:var(--muted);">09</td><td style="color:var(--dark);font-weight:700;">Richmond, VA</td><td>South</td><td>Suburban</td><td style="color:var(--blue);font-weight:800;font-size:14px;">74</td><td style="color:var(--green);font-weight:600;">+36%</td><td>68</td><td>0</td><td><span class="tag tag-y">De Novo Anchor</span></td></tr>
+      <tr><td style="color:var(--muted);">10</td><td style="color:var(--dark);font-weight:700;">Salt Lake City, UT</td><td>West</td><td>Mid-Density</td><td style="color:var(--blue);font-weight:800;font-size:14px;">72</td><td style="color:var(--green);font-weight:600;">+25%</td><td>72</td><td>1</td><td><span class="tag tag-b">Early Consolidation</span></td></tr>
+    </tbody>
+  </table>
+  <div class="ibar">
+    <div class="lbl">Repeatability Signal</div>
+    <div class="txt">Top markets follow identifiable structural rules: mid-density typology, sub-3 PE neighbors, STOC above 72, supply gap above +22%. The pattern is screenable. Entry decisions driven by these parameters reduce subjectivity and materially improve capital efficiency.</div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 09: COMPETITION VS OPPORTUNITY -->
+<div class="page" id="p9">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">09 / 12 &nbsp; Competitive Pressure</div>
+  </div>
+  <div class="hl">Competitive Pressure Reduces Opportunity <span class="b">Non-Linearly</span></div>
+  <div class="sub">PE neighbor count is not a linear discount to market quality. Once PE penetration crosses threshold levels in a CBSA, opportunity compression accelerates sharply. Entry 12 to 24 months post-PE arrival carries materially higher cost and lower upside.</div>
+  <div class="cbox"><div style="position:relative;width:100%;height:280px;"><canvas id="peScatterChart"></canvas></div></div>
+  <div class="qgrid">
+    <div class="qcard"><div class="qdot" style="background:var(--blue);"></div><div><div class="qname" style="color:var(--blue);">Prime Entry</div><div class="qdesc">Low PE presence, high STOC score. Maximum opportunity window. Priority deployment with full strategic optionality intact.</div></div></div>
+    <div class="qcard"><div class="qdot" style="background:var(--navy);"></div><div><div class="qname" style="color:var(--navy);">Late Entry</div><div class="qdesc">High PE, high STOC. Quality market with compressed timeline and elevated acquisition pricing. Selective entry only.</div></div></div>
+    <div class="qcard"><div class="qdot" style="background:var(--red);"></div><div><div class="qname" style="color:var(--red);">Avoid</div><div class="qdesc">High PE penetration, low STOC. Overbuilt and consolidating. Returns structurally impaired.</div></div></div>
+    <div class="qcard"><div class="qdot" style="background:var(--light);border:1px solid var(--muted);"></div><div><div class="qname" style="color:var(--muted);">Monitor</div><div class="qdesc">Low PE, low STOC. Insufficient demand signal. Watch list only until structural conditions improve.</div></div></div>
+  </div>
+  <div class="ibar" style="margin-top:12px;">
+    <div class="lbl">Timing Thesis</div>
+    <div class="txt">Timing matters more than demand level. PE presence compresses opportunity windows even in high-demand markets. The STOC system tracks PE arrival in real time to identify the inflection point before it becomes a pricing event on acquisition targets.</div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 10: CONSOLIDATION -->
+<div class="page" id="p10">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">10 / 12 &nbsp; Consolidation Structure</div>
+  </div>
+  <div class="hl">Consolidation Is Early <span class="b">But Clustering Rapidly</span></div>
+  <div class="sub">PE penetration across CBSAs is not uniform or gradual. The distribution is highly right-skewed: the majority of markets remain at or near zero, but a small cluster of markets are consolidating at speed. First-mover entry captures the largest multiple expansion opportunity.</div>
+  <div class="cbox"><div style="position:relative;width:100%;height:260px;"><canvas id="histChart"></canvas></div></div>
+  <div class="col2" style="gap:12px;">
+    <div class="ibar" style="margin-top:0;">
+      <div class="lbl">Structural Observation</div>
+      <div class="txt">Consolidation does not happen gradually across the market. It occurs in localized bursts in specific CBSAs driven by first-mover platform entry. Once it starts, it compounds quickly and acquisition pricing follows within 18 to 36 months.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);padding:16px 18px;display:flex;flex-direction:column;gap:9px;">
+      <div style="font-size:10px;font-weight:800;letter-spacing:2px;color:var(--muted);text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--line);">CBSA PE Distribution Breakdown</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;color:var(--text);">CBSAs at 0% PE penetration</span><span style="font-size:20px;font-weight:800;color:var(--blue);">71%</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;color:var(--text);">CBSAs at 1-5% PE penetration</span><span style="font-size:20px;font-weight:800;color:var(--navy);">19%</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;color:var(--text);">CBSAs at 6-15% PE penetration</span><span style="font-size:20px;font-weight:800;color:var(--amber);">7%</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;color:var(--text);">CBSAs at 15%+ PE penetration</span><span style="font-size:20px;font-weight:800;color:var(--red);">3%</span></div>
+    </div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 11: TARGET QUALITY -->
+<div class="page" id="p11">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">11 / 12 &nbsp; Target Quality</div>
+  </div>
+  <div class="hl">Target Quality Varies More <span class="b">Than Market Conditions</span></div>
+  <div class="sub">Within any given CBSA, target-level digital maturity signals span a broader range than market-level variance. Top-decile targets outperform peers on every DMS component and command asymmetric acquisition value relative to their asking multiples.</div>
+  <div class="cbox"><div style="position:relative;width:100%;height:270px;"><canvas id="radarChart"></canvas></div></div>
+  <div class="col4">
+    <div class="ccrd" style="border-top-color:var(--blue);"><div class="rname" style="color:var(--blue);">Reviews</div><div class="det">Top-decile targets: 4.8+ avg rating, 200+ reviews, managed responses. Bottom-decile: sub-50 reviews, unmanaged, negative recency trend.</div></div>
+    <div class="ccrd" style="border-top-color:var(--green);"><div class="rname" style="color:var(--green);">Social Presence</div><div class="det">Instagram following: 10x+ spread between top and bottom decile. Engagement gap even wider. Organic reach drives significant new patient acquisition.</div></div>
+    <div class="ccrd" style="border-top-color:var(--navy);"><div class="rname" style="color:var(--navy);">Website Quality</div><div class="det">Site architecture, SEO, load time, and conversion signals diverge significantly. Top targets convert at 3x the category average on inbound traffic.</div></div>
+    <div class="ccrd" style="border-top-color:var(--amber);"><div class="rname" style="color:var(--amber);">Booking + Membership</div><div class="det">Online booking and membership programs present in fewer than 30% of independent targets. High upside immediately post-acquisition through infrastructure implementation.</div></div>
+  </div>
+  <div class="ibar">
+    <div class="lbl">Intelligence Advantage</div>
+    <div class="txt">CDS is not just location data. Target-level signal scoring identifies the highest-quality, lowest-risk acquisition targets before they are marketed. The DMS score is a pre-LOI due diligence accelerator that reduces time-to-close and improves underwriting confidence.</div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+<!-- ============================================================ PAGE 12: CDS POSITIONING -->
+<div class="page dark-top" id="p12">
+  <div class="pg-hdr">
+    <div class="logo">
+      <img src="stoc-logo.png" height="47" style="display:block;" alt="STOC Advisory">
+    </div>
+    <div class="pg-tag">12 / 12 &nbsp; CDS Positioning</div>
+  </div>
+  <div class="hl">From Market Visibility <span class="b">to Precision Execution</span></div>
+  <div class="sub">Traditional market analysis operates at the wrong altitude. CDS intelligence operates at the target level, enabling capital deployment decisions that are specific, scored, and defensible against any institutional LP standard of rigor.</div>
+  <table class="ctbl">
+    <thead><tr><th>Traditional Approach</th><th>CDS Intelligence Layer</th></tr></thead>
+    <tbody>
+      <tr><td>Market size</td><td>Supply gap scored by CBSA against real-time demand signals</td></tr>
+      <tr><td>Clinic count</td><td>Acquisition target density with DMS scoring per target</td></tr>
+      <tr><td>Static lists</td><td>Dynamic STOC scoring with real-time PE proximity alerts</td></tr>
+      <tr><td>Surface metrics</td><td>Target-level signals: reviews, social, booking, membership</td></tr>
+      <tr><td>Geography-first decisioning</td><td>Typology-first: density, gap, and competition indexed together</td></tr>
+      <tr><td>Qualitative market reads</td><td>Quantified entry timing by CBSA with quadrant classification</td></tr>
+      <tr><td>Targets classified by gut</td><td>93% accuracy on 24,853 target classifications via structured pipeline</td></tr>
+    </tbody>
+  </table>
+  <div class="final-cta">CDS enables targeted deployment of capital: identifying where to build, what to acquire, and when to enter.</div>
+  <div class="col2" style="gap:12px;">
+    <div class="ibar" style="margin-top:0;">
+      <div class="lbl">Intelligence Architecture</div>
+      <div class="txt">686 markets scored. 24,853 targets catalogued. Real-time PE tracking across all CBSAs. The infrastructure for precision capital deployment exists today. The $44.83B market trajectory compounds the urgency.</div>
+    </div>
+    <div class="pbar" style="margin-top:0;padding:12px 18px;">
+      <div class="lbl">Window Status</div>
+      <div class="txt">The opportunity window is narrowing in 22% of tracked CBSAs. First-mover entry in the remaining 78% preserves full multiple expansion optionality. Timing is the primary risk variable. Scoring is the primary edge.</div>
+    </div>
+  </div>
+  <div class="corner-mark">STOC Advisory | Confidential</div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+Chart.defaults.color='#7A90A8';
+Chart.defaults.font.family="'Plus Jakarta Sans',sans-serif";
+Chart.defaults.font.size=11;
+const BLUE='#1B7EC5',NAVY='#2C3370',DARK='#0C1730',LIGHT='#A5BDD6',
+      GREEN='#1A9A6A',RED='#C84040',AMBER='#C87010',MUTED='#7A90A8',TEXT='#2A3A55';
+const GRID='rgba(0,0,0,0.05)';
+
+/* US MAP */
+(function(){
+  const cbsas=[
+    {lat:40.71,lng:-74.01,r:'NE',s:9},{lat:39.95,lng:-75.17,r:'NE',s:7},
+    {lat:42.36,lng:-71.06,r:'NE',s:7},{lat:39.29,lng:-76.61,r:'NE',s:5},
+    {lat:40.44,lng:-79.99,r:'NE',s:5},{lat:41.76,lng:-72.68,r:'NE',s:4},
+    {lat:38.90,lng:-77.03,r:'NE',s:7},{lat:41.82,lng:-71.41,r:'NE',s:4},
+    {lat:41.88,lng:-87.63,r:'MW',s:9},{lat:39.96,lng:-82.99,r:'MW',s:7},
+    {lat:39.77,lng:-86.16,r:'MW',s:7},{lat:39.10,lng:-94.58,r:'MW',s:6},
+    {lat:43.04,lng:-87.91,r:'MW',s:5},{lat:44.98,lng:-93.27,r:'MW',s:7},
+    {lat:39.10,lng:-84.51,r:'MW',s:5},{lat:41.50,lng:-81.69,r:'MW',s:6},
+    {lat:42.33,lng:-83.05,r:'MW',s:7},{lat:38.63,lng:-90.20,r:'MW',s:6},
+    {lat:41.26,lng:-95.94,r:'MW',s:4},{lat:41.59,lng:-93.62,r:'MW',s:4},
+    {lat:33.75,lng:-84.39,r:'S',s:9},{lat:25.77,lng:-80.20,r:'S',s:8},
+    {lat:27.95,lng:-82.46,r:'S',s:7},{lat:29.76,lng:-95.37,r:'S',s:9},
+    {lat:32.78,lng:-96.81,r:'S',s:9},{lat:30.27,lng:-97.74,r:'S',s:8},
+    {lat:29.42,lng:-98.49,r:'S',s:6},{lat:35.23,lng:-80.84,r:'S',s:8},
+    {lat:36.17,lng:-86.78,r:'S',s:8},{lat:35.78,lng:-78.64,r:'S',s:7},
+    {lat:37.54,lng:-77.44,r:'S',s:6},{lat:30.33,lng:-81.66,r:'S',s:6},
+    {lat:35.47,lng:-97.52,r:'S',s:5},{lat:35.15,lng:-90.05,r:'S',s:5},
+    {lat:33.52,lng:-86.81,r:'S',s:5},{lat:38.25,lng:-85.76,r:'S',s:5},
+    {lat:34.05,lng:-118.24,r:'W',s:9},{lat:37.77,lng:-122.42,r:'W',s:8},
+    {lat:47.61,lng:-122.33,r:'W',s:8},{lat:33.45,lng:-112.07,r:'W',s:8},
+    {lat:39.74,lng:-104.99,r:'W',s:7},{lat:45.52,lng:-122.68,r:'W',s:6},
+    {lat:32.72,lng:-117.16,r:'W',s:6},{lat:36.17,lng:-115.14,r:'W',s:7},
+    {lat:40.76,lng:-111.89,r:'W',s:6},{lat:38.58,lng:-121.49,r:'W',s:6},
+    {lat:32.22,lng:-110.97,r:'W',s:4},{lat:35.08,lng:-106.65,r:'W',s:4},
+    {lat:43.62,lng:-116.20,r:'W',s:4},{lat:47.66,lng:-117.43,r:'W',s:4}
+  ];
+  const colorMap={NE:BLUE,S:GREEN,MW:NAVY,W:LIGHT};
+  const el=document.getElementById('usmap');
+  const W=el.offsetWidth||520,H=300;
+  const svg=d3.select('#usmap').append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('width','100%').attr('height',H);
+  const proj=d3.geoAlbersUsa().scale(W*1.18).translate([W/2,H/2-8]);
+  const path=d3.geoPath(proj);
+  d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(us=>{
+    svg.append('g').selectAll('path').data(topojson.feature(us,us.objects.states).features).join('path')
+      .attr('d',path).attr('fill','#EBF2FA').attr('stroke','rgba(27,126,197,0.22)').attr('stroke-width','0.6');
+    svg.append('g').selectAll('circle').data(cbsas.filter(d=>proj([d.lng,d.lat]))).join('circle')
+      .attr('cx',d=>(proj([d.lng,d.lat])||[0,0])[0])
+      .attr('cy',d=>(proj([d.lng,d.lat])||[0,0])[1])
+      .attr('r',d=>d.s*0.88).attr('fill',d=>colorMap[d.r])
+      .attr('opacity','0.8').attr('stroke','rgba(255,255,255,0.7)').attr('stroke-width','0.8');
+    svg.append('text').attr('x',W/2).attr('y',H-4).attr('text-anchor','middle')
+      .attr('font-family',"'Plus Jakarta Sans',sans-serif").attr('font-size','9').attr('font-weight','700')
+      .attr('letter-spacing','1.5').attr('fill',MUTED)
+      .text('SIZE = TARGET CONCENTRATION | COLOR = REGION | 50 MAJOR CBSAs SHOWN');
+  }).catch(()=>{
+    svg.append('rect').attr('x',10).attr('y',10).attr('width',W-20).attr('height',H-20).attr('fill','#EBF2FA').attr('rx','3');
+    svg.append('text').attr('x',W/2).attr('y',H/2).attr('text-anchor','middle').attr('fill',MUTED).attr('font-size','12').text('Map loading...');
+  });
+})();
+
+/* SCATTER P4 */
+new Chart(document.getElementById('scatterChart'),{type:'scatter',
+  data:{datasets:[
+    {label:'South',data:[{x:18,y:82},{x:22,y:79},{x:15,y:85},{x:28,y:78},{x:12,y:84},{x:32,y:74},{x:20,y:80}],backgroundColor:GREEN+'BB',pointRadius:8},
+    {label:'Northeast',data:[{x:72,y:52},{x:68,y:58},{x:82,y:48},{x:78,y:55},{x:90,y:44},{x:65,y:62},{x:85,y:50}],backgroundColor:AMBER+'BB',pointRadius:8},
+    {label:'Midwest',data:[{x:42,y:72},{x:48,y:68},{x:38,y:76},{x:52,y:70},{x:45,y:74},{x:55,y:66},{x:35,y:78}],backgroundColor:NAVY+'BB',pointRadius:8},
+    {label:'West',data:[{x:25,y:65},{x:60,y:72},{x:80,y:58},{x:35,y:78},{x:70,y:45},{x:50,y:68},{x:40,y:52}],backgroundColor:BLUE+'BB',pointRadius:8}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'top',labels:{boxWidth:9,padding:14}}},
+    scales:{x:{title:{display:true,text:'Supply Density (BD Score)',color:MUTED},grid:{color:GRID},ticks:{color:MUTED},min:5,max:100},
+      y:{title:{display:true,text:'STOC Score (BI)',color:MUTED},grid:{color:GRID},ticks:{color:MUTED},min:35,max:95}}
+  }
+});
+
+/* BAR TYPOLOGY P5 */
+new Chart(document.getElementById('barTypChart'),{type:'bar',
+  data:{labels:['Dense Urban','Mid-Density','Suburban Growth','Rural / Exurban'],
+    datasets:[
+      {label:'Avg STOC Score',data:[56,79,64,42],backgroundColor:BLUE+'CC',borderColor:BLUE,borderWidth:1},
+      {label:'Avg Supply Gap (%)',data:[11,34,28,18],backgroundColor:GREEN+'BB',borderColor:GREEN,borderWidth:1},
+      {label:'Avg PE Neighbors',data:[4.4,1.1,0.6,0.2],backgroundColor:RED+'BB',borderColor:RED,borderWidth:1,yAxisID:'y1'}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'top',labels:{boxWidth:9,padding:14}}},
+    scales:{x:{grid:{color:GRID},ticks:{color:TEXT}},
+      y:{grid:{color:GRID},ticks:{color:MUTED},title:{display:true,text:'Score / Gap (%)',color:MUTED,font:{size:10}},max:95},
+      y1:{position:'right',grid:{drawOnChartArea:false},ticks:{color:RED},title:{display:true,text:'PE Neighbors',color:RED,font:{size:10}},max:7}}
+  }
+});
+
+/* BAR TARGETS P6 */
+new Chart(document.getElementById('barTargetChart'),{type:'bar',
+  data:{
+    labels:['Austin','Charlotte','Nashville','Columbus','Denver','Raleigh','Indianapolis','Salt Lake','Kansas City','Richmond','Jacksonville','Memphis','OKC','Omaha','Birmingham','Louisville','Tulsa','Albuquerque','Tucson','Baton Rouge','Greenville','Des Moines','Chattanooga','Spokane','Fresno'],
+    datasets:[
+      {label:'Acquisition Targets',data:[156,142,128,115,134,98,88,72,82,68,95,78,65,60,72,80,58,52,55,62,70,48,45,50,56],
+        backgroundColor:(ctx)=>{const v=[156,142,128,115,134,98,88,72,82,68,95,78,65,60,72,80,58,52,55,62,70,48,45,50,56];return `rgba(27,126,197,${0.28+(v[ctx.dataIndex]/156)*0.65})`;},
+        borderColor:'rgba(27,126,197,0.25)',borderWidth:1},
+      {label:'% of Total Supply',type:'line',data:[3.8,3.2,2.9,2.6,2.5,2.2,2.0,1.8,1.9,1.6,2.1,1.7,1.5,1.4,1.6,1.8,1.3,1.2,1.2,1.4,1.6,1.1,1.0,1.1,1.2],
+        yAxisID:'y1',borderColor:NAVY+'CC',backgroundColor:'transparent',pointBackgroundColor:NAVY,pointRadius:3,borderWidth:2,tension:0.3}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'top',labels:{boxWidth:9,padding:12}}},
+    scales:{x:{grid:{color:GRID},ticks:{color:MUTED,font:{size:9},maxRotation:45}},
+      y:{grid:{color:GRID},ticks:{color:MUTED},title:{display:true,text:'Target Count',color:MUTED,font:{size:10}}},
+      y1:{position:'right',grid:{drawOnChartArea:false},ticks:{color:NAVY,callback:v=>v+'%'},title:{display:true,text:'% of Total Supply',color:NAVY,font:{size:10}}}}
+  }
+});
+
+/* QUADRANT P7 */
+const quadPlugin={id:'q7',beforeDraw(chart){
+  const {ctx,chartArea:{left,right,top,bottom},scales:{x,y}}=chart;
+  if(!x||!y)return;
+  const mx=x.getPixelForValue(50),my=y.getPixelForValue(25);
+  ctx.save();
+  [[left,top,mx-left,my-top,AMBER+'12'],[mx,top,right-mx,my-top,GREEN+'12'],[left,my,mx-left,bottom-my,RED+'12'],[mx,my,right-mx,bottom-my,BLUE+'12']].forEach(([x1,y1,w,h,c])=>{ctx.fillStyle=c;ctx.fillRect(x1,y1,w,h);});
+  ctx.strokeStyle='rgba(0,0,0,0.08)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+  ctx.beginPath();ctx.moveTo(mx,top);ctx.lineTo(mx,bottom);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(left,my);ctx.lineTo(right,my);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.font="700 9px 'Plus Jakarta Sans'";
+  [[AMBER,'TRUE WHITESPACE',left+7,top+13],[GREEN,'PLATFORM BUILD',mx+7,top+13],[RED,'AVOID',left+7,bottom-7],[BLUE,'ROLL-UP ONLY',mx+7,bottom-7]].forEach(([c,t,tx,ty])=>{ctx.fillStyle=c+'77';ctx.fillText(t,tx,ty);});
+  ctx.restore();
+}};
+new Chart(document.getElementById('quadrantChart'),{type:'scatter',plugins:[quadPlugin],
+  data:{datasets:[
+    {label:'True Whitespace',data:[{x:18,y:38},{x:25,y:42},{x:12,y:35},{x:30,y:40},{x:22,y:45}],backgroundColor:AMBER+'CC',pointRadius:9},
+    {label:'Platform Build',data:[{x:72,y:36},{x:82,y:32},{x:65,y:40},{x:88,y:28},{x:75,y:38}],backgroundColor:GREEN+'CC',pointRadius:9},
+    {label:'Roll-Up Only',data:[{x:68,y:14},{x:78,y:18},{x:85,y:12},{x:72,y:20},{x:90,y:10}],backgroundColor:BLUE+'CC',pointRadius:9},
+    {label:'Avoid',data:[{x:22,y:15},{x:35,y:10},{x:15,y:18},{x:40,y:8},{x:28,y:12}],backgroundColor:RED+'CC',pointRadius:9}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'top',labels:{boxWidth:9,padding:14}}},
+    scales:{x:{min:0,max:100,title:{display:true,text:'Acquisition Target Count (AZ)',color:MUTED},grid:{color:GRID},ticks:{color:MUTED}},
+      y:{min:0,max:55,title:{display:true,text:'Supply Gap Score (BF)',color:MUTED},grid:{color:GRID},ticks:{color:MUTED}}}
+  }
+});
+
+/* PE QUADRANT P9 */
+const pePlugin={id:'q9',beforeDraw(chart){
+  const {ctx,chartArea:{left,right,top,bottom},scales:{x,y}}=chart;
+  if(!x||!y)return;
+  const mx=x.getPixelForValue(3),my=y.getPixelForValue(60);
+  ctx.save();
+  [[left,top,mx-left,my-top,BLUE+'10'],[mx,top,right-mx,my-top,NAVY+'10'],[mx,my,right-mx,bottom-my,RED+'10'],[left,my,mx-left,bottom-my,LIGHT+'20']].forEach(([x1,y1,w,h,c])=>{ctx.fillStyle=c;ctx.fillRect(x1,y1,w,h);});
+  ctx.strokeStyle='rgba(0,0,0,0.08)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+  ctx.beginPath();ctx.moveTo(mx,top);ctx.lineTo(mx,bottom);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(left,my);ctx.lineTo(right,my);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.font="700 9px 'Plus Jakarta Sans'";
+  [[BLUE,'PRIME ENTRY',left+7,top+13],[NAVY,'LATE ENTRY',mx+7,top+13],[RED,'AVOID',mx+7,bottom-7],[MUTED,'MONITOR',left+7,bottom-7]].forEach(([c,t,tx,ty])=>{ctx.fillStyle=c+'99';ctx.fillText(t,tx,ty);});
+  ctx.restore();
+}};
+new Chart(document.getElementById('peScatterChart'),{type:'scatter',plugins:[pePlugin],
+  data:{datasets:[
+    {label:'Prime Entry',data:[{x:0.5,y:84},{x:1,y:78},{x:0,y:82},{x:1.5,y:74},{x:2,y:79},{x:0.8,y:88}],backgroundColor:BLUE+'CC',pointRadius:9},
+    {label:'Late Entry',data:[{x:4,y:76},{x:5,y:72},{x:6,y:68},{x:7,y:74},{x:8,y:65}],backgroundColor:NAVY+'CC',pointRadius:9},
+    {label:'Avoid',data:[{x:5,y:42},{x:6.5,y:38},{x:8,y:32},{x:7,y:45},{x:9,y:30}],backgroundColor:RED+'CC',pointRadius:9},
+    {label:'Monitor',data:[{x:0.5,y:44},{x:1,y:38},{x:2,y:42},{x:1.5,y:35},{x:0.2,y:50}],backgroundColor:LIGHT+'99',pointRadius:9}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'top',labels:{boxWidth:9,padding:14}}},
+    scales:{x:{min:-0.5,max:10,title:{display:true,text:'PE Neighbors (Count, BA)',color:MUTED},grid:{color:GRID},ticks:{color:MUTED}},
+      y:{min:20,max:98,title:{display:true,text:'STOC Score (BI)',color:MUTED},grid:{color:GRID},ticks:{color:MUTED}}}
+  }
+});
+
+/* HISTOGRAM P10 */
+new Chart(document.getElementById('histChart'),{type:'bar',
+  data:{labels:['0%','1%','2%','3%','4%','5%','6-7%','8-9%','10-12%','13-15%','15%+'],
+    datasets:[{label:'Number of CBSAs',data:[487,68,42,30,18,12,9,7,5,4,4],
+      backgroundColor:(ctx)=>{const i=ctx.dataIndex;if(i===0)return BLUE+'CC';if(i<=4)return NAVY+'99';if(i<=7)return AMBER+'99';return RED+'CC';},
+      borderColor:'rgba(255,255,255,0.6)',borderWidth:1}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.y} CBSAs`}}},
+    scales:{x:{title:{display:true,text:'PE Penetration % per CBSA',color:MUTED,font:{size:11}},grid:{color:GRID},ticks:{color:MUTED}},
+      y:{type:'logarithmic',title:{display:true,text:'Number of CBSAs (log)',color:MUTED,font:{size:11}},grid:{color:GRID},ticks:{color:MUTED,callback:v=>Math.round(v)===v?v:''}}}
+  }
+});
+
+/* RADAR P11 */
+new Chart(document.getElementById('radarChart'),{type:'radar',
+  data:{labels:['Reviews','IG Followers','Website Quality','Online Booking','Membership Programs'],
+    datasets:[
+      {label:'Top Decile',data:[92,88,86,84,80],backgroundColor:BLUE+'20',borderColor:BLUE+'EE',borderWidth:2,pointBackgroundColor:BLUE,pointRadius:5},
+      {label:'Average Target',data:[58,44,52,38,24],backgroundColor:NAVY+'15',borderColor:NAVY+'BB',borderWidth:2,pointBackgroundColor:NAVY,pointRadius:5},
+      {label:'Bottom Decile',data:[28,18,22,12,6],backgroundColor:RED+'12',borderColor:RED+'99',borderWidth:2,pointBackgroundColor:RED,pointRadius:5}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'top',labels:{boxWidth:9,padding:14}}},
+    scales:{r:{min:0,max:100,grid:{color:'rgba(0,0,0,0.06)'},angleLines:{color:'rgba(0,0,0,0.06)'},pointLabels:{color:TEXT,font:{size:12}},ticks:{display:false,backdropColor:'transparent'}}}
+  }
+});
+</script>
+</body>
+</html>
